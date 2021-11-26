@@ -24,17 +24,21 @@
 </head>
 <body>
     <div class="main">
-            <h1>Are you ready for Bing Chilling?<br> 
-            Don't Worry, It will immediately stop after 5 seconds</h1>
+        <div class="card">
+            <h1>Are you ready for Bing Chilling, RickRoll or Super Idol?</h1>
+            <p id="e">You got</p>
+        </div>
     </div>
 </body>
 <script>
-    // This will only open 10 tabs
-    setTimeout(function(){
-        window.close()
-    }, 7000);
-    setInterval(() => {
-        window.open(["https://www.youtube.com/watch?v=KH_XIt-hm2Y", "https://www.youtube.com/watch?v=aCgP8BFjrw4", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"][Math.floor(Math.random() * 3)], "_blank");
-    }, 700);
+    const link = [
+        {name: "Bing Chlling", link:"https://www.youtube.com/watch?v=KH_XIt-hm2Y"}, 
+        {name: 'Super Idol', link:"https://www.youtube.com/watch?v=aCgP8BFjrw4"}, 
+        {name: 'Ultimate RickRoll', link:"https://www.youtube.com/watch?v=dQw4w9WgXcQ"}
+][Math.floor(Math.random() * 3)];
+        setTimeout(() => {
+            window.open(link.link, "_blank")
+        }, 500);
+        document.getElementById("e").innerHTML = `You got ${link.name}`;
 </script>
 </html>
